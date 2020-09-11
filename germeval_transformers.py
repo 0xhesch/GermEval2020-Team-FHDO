@@ -32,7 +32,7 @@ databunch = BertDataBunch('./', './',
                           max_seq_length=128,
                           multi_gpu=False,
                           multi_label=False,
-                          model_type='roberta')
+                          model_type='bert')
 
 device_cuda = torch.device('cuda')
 
