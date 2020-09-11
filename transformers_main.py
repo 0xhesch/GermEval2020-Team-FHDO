@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.NOTSET)
 logger = logging.getLogger()
 
 databunch = BertDataBunch('./', './',
-                          tokenizer='bert-base-multilingual-cased',
+                          tokenizer='bert-base-german-dbmdz-cased',
                           train_file='train.csv',
                           val_file='dev.csv',
                           label_file='labels.csv',
@@ -43,7 +43,7 @@ metrics.append({'name': 'F1_micro', 'function': F1_micro})
 
 learner = BertLearner.from_pretrained_model(
 						databunch,
-						pretrained_path='bert-base-multilingual-cased',
+						pretrained_path='bert-base-german-dbmdz-cased',
 						metrics=metrics,
 						device=device_cuda,
 						logger=logger,
@@ -56,7 +56,7 @@ learner = BertLearner.from_pretrained_model(
 						logging_steps=500)
 
 learner.fit(
-		epochs=4,
+		epochs=3,
 		lr=6e-4,
 		validate=True, 	# Evaluate the model after each epoch
 		schedule_type="warmup_cosine",
