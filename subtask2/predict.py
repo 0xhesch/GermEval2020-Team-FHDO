@@ -12,7 +12,7 @@ predictor = BertClassificationPredictor(
 				model_path=MODEL_PATH,
 				label_path='./', # location for labels.csv file
 				multi_label=False,
-				model_type='roberta',
+				model_type='bert',
 				do_lower_case=False)
 
 #multi prediction
